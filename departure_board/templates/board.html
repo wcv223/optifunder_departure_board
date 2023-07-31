@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'departure_board/css/departure_board_style.css' %}">
+    <title>Departure Board</title>
+</head>
+<body>
+    <h1>Departure Board South Station</h1>
+    <h1>Current Date in Boston {{ date_now }}</h1>
+    <h1>Current Time in Boston {{ time_now }}</h1>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Carrier</th>
+                <th>Time</th>
+                <th>Destination</th>
+                <th>Train#</th>
+                <th>Track#</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in predictions %}
+            <tr>
+                <td>MBTA</td>
+                <td>{{ i.departure_time }}</td>
+                <td>{{ i.headsign }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.platform_code }}</td>
+                <td>{{ i.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
