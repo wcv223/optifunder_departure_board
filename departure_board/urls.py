@@ -1,7 +1,8 @@
 from django.urls import path
 
-from . import views
+from .views import board, api_predictions
 
 urlpatterns = [
-    path('', views.board, name='board'),
+    path('', board, name='board'),
+    path('api/predictions/', api_predictions, name='api_predictions'),
 ]

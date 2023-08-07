@@ -33,7 +33,7 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="predictions-body">
             {% for i in predictions %}
             <tr>
                 <td>MBTA</td>
@@ -46,6 +46,9 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <script src="{% static 'departure_board/js/board.js' %}"></script>
+
 
 </body>
 </html>

@@ -30,3 +30,20 @@ def board(request: HttpRequest) -> HttpResponse:
     predictions = process_predictions_data(data, trips, stops)
 
     return render(request, 'board.html', {'predictions': predictions})
+
+
+def api_predictions(request: HttpRequest) -> JsonResponse:
+    try:
+        response = fetch_predictions()
+        response.raise_for_status()
+    except RequestException as e:
+        return JsonResponse({"error": "Unable to reach the API"}, status=500)
+
+    response_data = response.json()
+    data = response_data['data']
+    included = response_data['included']
+
+    trips, stops = process_included_data(included)
+    predictions = process_predictions_data(data, trips, stops)
+
+    return JsonResponse({'predictions': predictions})
