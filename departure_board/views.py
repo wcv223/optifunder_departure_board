@@ -19,7 +19,6 @@ def board(request: HttpRequest) -> HttpResponse:
     """
     try:
         response = fetch_predictions()
-        print(response)
         response.raise_for_status()
     except RequestException as e:
         return JsonResponse({"error": "Unable to reach the API"}, status=500)
