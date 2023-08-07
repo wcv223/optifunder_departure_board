@@ -2,8 +2,7 @@ from django.http import HttpRequest, JsonResponse, HttpResponse
 from django.shortcuts import render
 from requests.exceptions import RequestException
 
-from departure_board.helpers import fetch_predictions, process_included_data, process_predictions_data, \
-    get_current_boston_time
+from departure_board.helpers import fetch_predictions, process_included_data, process_predictions_data
 
 
 def board(request: HttpRequest) -> HttpResponse:
@@ -29,6 +28,5 @@ def board(request: HttpRequest) -> HttpResponse:
 
     trips, stops = process_included_data(included)
     predictions = process_predictions_data(data, trips, stops)
-    time_now, date_now = get_current_boston_time()
 
-    return render(request, 'board.html', {'predictions': predictions, 'time_now': time_now, 'date_now': date_now})
+    return render(request, 'board.html', {'predictions': predictions})

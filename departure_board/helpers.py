@@ -89,16 +89,3 @@ def convert_to_time_string(date_str: str) -> str:
     """
     date_obj = datetime.fromisoformat(date_str)
     return date_obj.strftime('%I:%M %p')
-
-
-def get_current_boston_time() -> Tuple[str, str]:
-    """
-    Get the current date and time in Boston.
-
-    :return: A tuple containing two strings, the current time and date in Boston.
-    """
-    boston_tz = pytz.timezone('America/New_York')
-    now = datetime.now(boston_tz)
-    time_now = now.strftime('%I:%M %p')
-    date_now = now.strftime('%m-%d-%Y')
-    return time_now, date_now

@@ -1,7 +1,9 @@
 body {
-    background-color: #000;
-    color: #0f0;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for that digital look */
+    background-color: #000; /* Dark background for better contrast */
+    color: #0f0; /* Lighter color text for better readability */
+    margin: 0;
+    padding: 20px;
 }
 
 h1 {
@@ -10,13 +12,51 @@ h1 {
     margin-bottom: 20px;
 }
 
+#clock_boston {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#clock_boston h1 {
+    margin-right: 15px;  /* Add some space between the text and clock */
+}
+
+#date {
+    font-size: 2em;
+    padding: 10px;
+}
+
+#date_boston {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#date_boston h1 {
+    margin-right: 15px;  /* Add some space between the text and clock */
+}
+
+#clock {
+    font-size: 2em;
+    padding: 10px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
     padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #0f0;
+    text-align: center;
+    border-bottom: 1px solid #4d4d4d;  /* A slightly lighter border to delineate rows */
+}
+
+tbody tr:hover {
+    background-color: #333333;
+    cursor: pointer;
 }

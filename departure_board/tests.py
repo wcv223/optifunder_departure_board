@@ -1,7 +1,7 @@
 from unittest.mock import patch, Mock
 from django.test import TestCase
-from departure_board.helpers import fetch_predictions, process_included_data, get_prediction_attributes, convert_to_time_string, \
-    get_current_boston_time
+from departure_board.helpers import (fetch_predictions, process_included_data, get_prediction_attributes,
+                                     convert_to_time_string)
 
 
 class DepartureBoardTests(TestCase):
@@ -60,8 +60,3 @@ class DepartureBoardTests(TestCase):
         expected_result = "01:45 PM"
         result = convert_to_time_string(date_str)
         self.assertEqual(result, expected_result)
-
-    def test_get_current_boston_time(self):
-        time_now, date_now = get_current_boston_time()
-        self.assertIsNotNone(time_now)
-        self.assertIsNotNone(date_now)

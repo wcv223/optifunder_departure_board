@@ -8,8 +8,18 @@
 </head>
 <body>
     <h1>Departure Board South Station</h1>
-    <h1>Current Date in Boston {{ date_now }}</h1>
-    <h1>Current Time in Boston {{ time_now }}</h1>
+    <div id="date_boston">
+        <h1>Current Date in Boston</h1>
+        <div id="date"></div>
+    </div>
+    <script src="{% static 'departure_board/js/date.js' %}"></script>
+
+    <div id="clock_boston">
+        <h1>Current Time in Boston</h1>
+        <div id="clock"></div>
+    </div>
+    <script src="{% static 'departure_board/js/clock.js' %}"></script>
+
     <table>
 
         <thead>
